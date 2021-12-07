@@ -1,0 +1,54 @@
+-var currency = ["Pesos(Col)", "Dollar(US)", "Euros(Eur)"]
+-var language = ["Spanish(Spa)", "English(En)", "German(Ger)"]
+-var parameter= ["currency", "language"]
+-var number=["0", "1", "2", "3"]
+
+mixin gin(currency, language, parameter, number)
+	label(for=parameter) !{parameter}
+	select(name=parameter id=parameter) Type of !{parameter}
+		each currencies in currency
+			option(value=number) !{currency}
+
+
+doctype html
+head
+	title Exercise Week 4- Pug
+	meta(name="keywords" content="use of ")
+	meta(name="description" content="exercise week 4")
+	meta(name="author" content="Leidy Sanchez")
+	meta(http-equiv="refresh" content="30")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+body
+	header.mainMenu 
+		div.topbar
+			span Make Huge Moves
+		div.menuCurrency
+			label(for="currency") Currency 
+			select(name="currency" id="currency") Type of currency
+				option(value="0") Pesos(Col)
+				option(value="1") Dollar(US)
+				option(value="2") Euros(Eur)
+		div.menuLanguage
+			label(for="currency") Language  
+			select(name="currency" id="currency") Type of language 
+				option(value="0") Spanish(Spa)
+				option(value="1") English(En)
+				option(value="2") German(Ger)
+		nav.mainMenu
+		div.menuLogoWrapper
+			button(aria-label="Open Huge Menu" class="menuWrapperButton" alt="Huge Logo")
+				img(src="./assets/huge.png" alt="logo Huge")
+		ul
+			li.nav-item Program
+				a(href="#")
+			li.nav-item Tech
+				a(href="#")
+			li.nav-item Talent
+				a(href="#")
+	main.content
+		
+		img(src="#", alt="Program")
+		img(src="#", alt="Tech")
+		img(src="#", alt="Talent")
+	form.contact(action="#") 
+
