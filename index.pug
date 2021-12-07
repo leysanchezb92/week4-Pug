@@ -1,54 +1,67 @@
--var currency = ["Pesos(Col)", "Dollar(US)", "Euros(Eur)"]
--var language = ["Spanish(Spa)", "English(En)", "German(Ger)"]
--var parameter= ["currency", "language"]
--var number=["0", "1", "2", "3"]
+-var img= ["homero_amigos.jpeg", "homero_compu.jpeg", "homero_talent.jpeg"]
+-var title= ["Program", "Tech", "Talent"]
+-var description= ["Homero Simpson con amigos", "Homero Simpson con cumputador", "Homero Simpson tocando guitarra"]
 
-mixin gin(currency, language, parameter, number)
-	label(for=parameter) !{parameter}
-	select(name=parameter id=parameter) Type of !{parameter}
-		each currencies in currency
-			option(value=number) !{currency}
+mixin images(img,title,description)
+	ul
+		li
+			figure
+				img(src="./assets/"+img alt=description width="100")
+				figcaption !{title}
 
-
-doctype html
-head
-	title Exercise Week 4- Pug
-	meta(name="keywords" content="use of ")
-	meta(name="description" content="exercise week 4")
-	meta(name="author" content="Leidy Sanchez")
-	meta(http-equiv="refresh" content="30")
-	meta(name="viewport" content="width=device-width, initial-scale=1.0")
-body
-	header.mainMenu 
-		div.topbar
-			span Make Huge Moves
-		div.menuCurrency
-			label(for="currency") Currency 
-			select(name="currency" id="currency") Type of currency
-				option(value="0") Pesos(Col)
-				option(value="1") Dollar(US)
-				option(value="2") Euros(Eur)
-		div.menuLanguage
-			label(for="currency") Language  
-			select(name="currency" id="currency") Type of language 
-				option(value="0") Spanish(Spa)
-				option(value="1") English(En)
-				option(value="2") German(Ger)
-		nav.mainMenu
-		div.menuLogoWrapper
-			button(aria-label="Open Huge Menu" class="menuWrapperButton" alt="Huge Logo")
-				img(src="./assets/huge.png" alt="logo Huge")
-		ul
-			li.nav-item Program
-				a(href="#")
-			li.nav-item Tech
-				a(href="#")
-			li.nav-item Talent
-				a(href="#")
-	main.content
-		
-		img(src="#", alt="Program")
-		img(src="#", alt="Tech")
-		img(src="#", alt="Talent")
-	form.contact(action="#") 
-
+doctype 
+html(lang="en")
+	head
+		title Exercise Week 4- Pug
+		meta(name="keywords" content="use of ")
+		meta(name="description" content="exercise week 4")
+		meta(name="author" content="Leidy Sanchez")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	body
+		header.mainMenu 
+			div.topbar
+				h1 Make Huge Moves
+			div.menuCurrency
+				label(for="currency") Currency 
+				select(name="currency" id="currency") Type of currency
+					option(value="0") Pesos(Col)
+					option(value="1") Dollar(US)
+					option(value="2") Euros(Eur)
+			div.menuLanguage
+				label(for="language") Language  
+				select(name="language" id="language") Type of language 
+					option(value="0") Spanish(Spa)
+					option(value="1") English(En)
+					option(value="2") German(Ger)
+			nav.mainMenu
+			div.menuLogoWrapper
+				button(aria-label="Open Huge Menu" class="menuWrapperButton" alt="Huge Logo")
+					img(src="./assets/huge.png" alt="logo Huge")
+			ul
+				li.nav-item Program
+					a(href="#" aria-label="Talent program")
+				li.nav-item Tech
+					a(href="#" aria-label="Tech talent")
+				li.nav-item Talent
+					a(href="#" aria-label="Talent in huge")
+		main.content
+			img(src="./assets/junior.jpg" title="el programador junior haciendo push" alt="Imagen yoda y el fin del mundo" arial-label="Fin con yoda al frente con texto cuando el junior le da git push -force al master branch")
+			+images(img[0], title[0], description[0])
+			+images(img[1], title[1], description[1])
+			+images(img[2], title[2], description[2])
+			h2 Contact Form
+			form.contact(action="#")
+				fieldset 
+					legend Personal Information
+					label(for="first-name") Name:
+					input(type="text" id="first-name" name="firstName" placeholder="enter your first name")  
+					label(for="Last-name")
+					input(type="text" id="Last-name" name="LastName" placeholder="enter your last name")
+					label(for="email")
+					input(type="email", name="email" placeholder="enter your email")
+				fieldset
+					label(for="message") Message:
+					textarea(name="message" id="message", cols="30", rows="10" placeholder="enter your message")
+				button(type="submit" aria-label="Close") Submit
+		footer.talent
+			p Powered by the M1 talent program at HUGE
