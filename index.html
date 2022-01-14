@@ -3,64 +3,61 @@
   <head>
     <title>Exercise Week 4- Pug</title>
     <meta name="keywords" content="use of ">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="exercise week 4">
     <meta name="author" content="Leidy Sanchez">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <header class="mainMenu"> 
-      <div class="topbar">
-        <h1>Make Huge Moves</h1>
-      </div>
-      <div class="menuCurrency">
-        <label for="currency">Currency </label>
+    <header class="main-menu"> 
+      <section class="main-menu_title">
+        <h1 tabindex="0">Make Huge Moves</h1>
+      </section>
+      <section class="main-menu_currency">
+        <label for="currency" aria-label="select the type of currency" tabindex="0">Currency </label>
         <select name="currency" id="currency">Type of currency
           <option value="0">Pesos(Col)</option>
           <option value="1">Dollar(US)</option>
           <option value="2">Euros(Eur)</option>
         </select>
-      </div>
-      <div class="menuLanguage">
-        <label for="language">Language  </label>
+      </section>
+      <section class="main-menu_language">
+        <label for="language" aria-label="select the type of language" tabindex="0">Language  </label>
         <select name="language" id="language">Type of language 
           <option value="0">Spanish(Spa)</option>
           <option value="1">English(En)</option>
           <option value="2">German(Ger)</option>
         </select>
-      </div>
-      <nav class="mainMenu"></nav>
-      <div class="menuLogoWrapper">
-        <button class="menuWrapperButton" aria-label="Open Huge Menu" alt="Huge Logo"><img src="./assets/huge.png" alt="logo Huge"></button>
-      </div>
-      <ul>
-        <li class="nav-item">Program<a href="#" aria-label="Talent program"></a></li>
-        <li class="nav-item">Tech<a href="#" aria-label="Tech talent"></a></li>
-        <li class="nav-item">Talent<a href="#" aria-label="Talent in huge"></a></li>
-      </ul>
+      </section>
+      <nav class="nav_topbar"></nav>
+      <section class="nav_wrapper">
+        <button class="nav_wrapper_btn" aria-label="Open Huge Menu" alt="Huge Logo"><img class="nav_wrapper_img" src="./assets/huge.png" alt="logo Huge"></button>
+      </section>
     </header>
-    <main class="content"><img src="./assets/junior.jpg" title="el programador junior haciendo push" alt="Imagen yoda y el fin del mundo" arial-label="Fin con yoda al frente con texto cuando el junior le da git push -force al master branch">
+    <main class="content"><img class="content_img" src="./assets/junior.jpg" title="el programador junior haciendo push" alt="Imagen yoda y el fin del mundo" arial-label="Fin con yoda al frente con texto cuando el junior le da git push -force al master branch">
       <ul>
         <li>
-          <figure><img src="./assets/homero_amigos.jpeg" alt="Homero Simpson con amigos" width="100"/>
-            <figcaption>Program</figcaption>
+          <figure><img src="./assets/homero_amigos.jpeg" alt="Homer Simpson with his friends" width="100" aria-label="Homer Simpson with his friends"/>
+            <figcaption tabindex="0">Program</figcaption>
           </figure>
         </li>
       </ul>
       <ul>
         <li>
-          <figure><img src="./assets/homero_compu.jpeg" alt="Homero Simpson con cumputador" width="100"/>
-            <figcaption>Tech</figcaption>
+          <figure><img src="./assets/homero_compu.jpeg" alt="Homer Simpson with his laptop" width="100" aria-label="Homer Simpson with his laptop"/>
+            <figcaption tabindex="0">Tech</figcaption>
           </figure>
         </li>
       </ul>
       <ul>
         <li>
-          <figure><img src="./assets/homero_talent.jpeg" alt="Homero Simpson tocando guitarra" width="100"/>
-            <figcaption>Talent</figcaption>
+          <figure><img src="./assets/homero_talent.jpeg" alt="Homer Simpson playing guitar" width="100" aria-label="Homer Simpson playing guitar"/>
+            <figcaption tabindex="0">Talent</figcaption>
           </figure>
         </li>
       </ul>
-      <h2>Contact Form</h2>
+      <h2 tabindex="0">Contact Form</h2>
       <form class="contact" action="#">
         <fieldset> 
           <legend>Personal Information</legend>
@@ -75,11 +72,11 @@
           <label for="message">Message:</label>
           <textarea name="message" id="message" cols="30" rows="10" placeholder="enter your message"></textarea>
         </fieldset>
-        <button type="submit" aria-label="Close">Submit</button>
+        <button type="submit" role="submit">Submit</button>
       </form>
     </main>
-    <footer class="talent">
-      <p>Powered by the M1 talent program at HUGE</p>
+    <footer class="footer">
+      <p class="footer_copy" tabindex="0">Powered by the M1 talent program at HUGE</p>
     </footer>
   </body>
 </html>
