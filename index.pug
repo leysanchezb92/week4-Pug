@@ -3,10 +3,10 @@
 -var description= ["Homer Simpson with his friends", "Homer Simpson with his laptop", "Homer Simpson playing guitar"]
 
 mixin images(img,title,description,tab)
-	ul
-		li
+	ul(class="content_list")
+		li(class="list_items")
 			figure
-				img(src="./assets/"+img alt=description width="100" aria-label=description )
+				img(src="./assets/"+img alt=description class="item_img " aria-label=description )
 				figcaption(tabindex="0") !{title}
 
 doctype 
@@ -19,44 +19,48 @@ html(lang="en")
 		meta(name="description" content="exercise week 4")
 		meta(name="author" content="Leidy Sanchez")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" type="text/css" href="style.css")
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(href="https://fonts.googleapis.com/css2?family=Inter:wght@300;wght@800&display=swap" rel="stylesheet")
 	body
-		header.main-menu 
+		header.main-menu
 			section.main-menu_title
 				h1(tabindex="0") Make Huge Moves
-			section.main-menu_currency
-				label(for="currency" aria-label="select the type of currency" tabindex="0") Currency 
-				select(name="currency" id="currency") Type of currency
-					option(value="0") Pesos(Col)
-					option(value="1") Dollar(US)
-					option(value="2") Euros(Eur)
-			section.main-menu_language
-				label(for="language" aria-label="select the type of language" tabindex="0") Language  
-				select(name="language" id="language") Type of language 
-					option(value="0") Spanish(Spa)
-					option(value="1") English(En)
-					option(value="2") German(Ger)
-			nav.nav_topbar
-			section.nav_wrapper
-				button(aria-label="Open Huge Menu" class="nav_wrapper_btn" alt="Huge Logo")
-					img(src="./assets/huge.png" alt="logo Huge" class="nav_wrapper_img")
+			nav.main-menu_nav 
+				section.nav_wrapper
+					button(aria-label="Open Huge Menu" class="nav_wrapper_btn" alt="Huge Logo")
+						img(src="./assets/huge.png" alt="logo Huge" class="nav_wrapper_img")
+				section.main-menu_currency
+					label(for="currency" aria-label="select the type of currency" tabindex="0") Currency 
+					select(name="currency" id="currency" class="main-menu_select") Type of currency
+						option(value="0") Pesos(Col)
+						option(value="1") Dollar(US)
+						option(value="2") Euros(Eur)
+				section.main-menu_language
+					label(for="language" aria-label="select the type of language" tabindex="0") Language  
+					select(name="language" id="language" class="main-menu_select") Type of language 
+						option(value="0") Spanish(Spa)
+						option(value="1") English(En)
+						option(value="2") German(Ger)
 		main.content
-			img(src="./assets/junior.jpg" class="content_img" title="el programador junior haciendo push" alt="Imagen yoda y el fin del mundo" arial-label="Fin con yoda al frente con texto cuando el junior le da git push -force al master branch")
-			+images(img[0], title[0], description[0])
-			+images(img[1], title[1], description[1])
-			+images(img[2], title[2], description[2])
-			h2(tabindex="0") Contact Form
+			section.content_program
+				img(src="./assets/junior.jpg" class="content_img" title="el programador junior haciendo push" alt="Imagen yoda y el fin del mundo" arial-label="Fin con yoda al frente con texto cuando el junior le da git push -force al master branch")
+				+images(img[0], title[0], description[0])
+				+images(img[1], title[1], description[1])
+				+images(img[2], title[2], description[2])
+			h2(tabindex="0" class="content_title") Contact Us
 			form.contact(action="#")
-				fieldset 
-					legend Personal Information
+				fieldset.contact_info
+					
 					label(for="first-name") Name:
-					input(type="text" id="first-name" name="firstName" placeholder="enter your first name")  
-					label(for="Last-name")
-					input(type="text" id="Last-name" name="LastName" placeholder="enter your last name")
-					label(for="email")
-					input(type="email", name="email" placeholder="enter your email")
-				fieldset
+					input(class="info_input" type="text" id="first-name" name="firstName" placeholder="enter your first name")  
+					label(for="Last-name") Last name:
+					input(class="info_input" type="text" id="Last-name" name="LastName" placeholder="enter your last name")
+					label(for="email") Email:
+					input(class="info_input" type="email" name="email" placeholder="enter your email")
+				fieldset.contact_info
 					label(for="message") Message:
-					textarea(name="message" id="message", cols="30", rows="10" placeholder="enter your message")
-				button(type="submit" role="submit") Submit
+					textarea(name="message" id="message" class="message" cols="30" rows="10" placeholder="enter your message")
+				button(type="submit" role="submit" class="submit") Submit
 		footer.footer
 			p.footer_copy(tabindex="0") Powered by the M1 talent program at HUGE
